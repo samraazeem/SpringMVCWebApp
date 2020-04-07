@@ -1,13 +1,4 @@
 def server= Artifactory.server 'artifactory'
-def uploadSpec = """{
-  "files": [
-    {
-      "pattern": ".war",
-      "target": "SpringMVCWebApp"
-    }
- ]
-}"""
-
 
 pipeline{
 	agent any
@@ -42,8 +33,17 @@ pipeline{
 		}
 		stage('Artifact Deploy'){
 			steps{
-				server.upload spec: uploadSpec
-				
+				script{
+					def uploadSpec = """{
+ 								 "files": [
+  								  {
+     									 "pattern": ".war",
+   									  "target": "SpringMVCWebApp"
+  								  }
+							 ]
+					}"""
+					server.upload spec: uploadSpec
+				}
 			}
 		}
     	}
