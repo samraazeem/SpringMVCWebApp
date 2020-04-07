@@ -1,3 +1,4 @@
+def server= Artifactory.server 'artifactory'
 pipeline{
 	agent any
 	
@@ -15,12 +16,12 @@ pipeline{
 			steps{
 				bat 'mvn clean install'
 			}
-	}
+		}
 		stage('Unit Test Stage'){
 			steps{
 				echo 'Unit Test Passes Successfully'
+			}
 		}
-	}
 
 		stage('SonarQube Analysis'){
 			steps{
@@ -29,26 +30,15 @@ pipeline{
 				}
 			}
 		}
-	stage('Artifact Deploy'){
-		steps{
-			rtServer{
-				id: 'artifactory',
-				url: 'http://localhost:8082/artifactory',
-				username: 'admin',
-				password: 'password'
-			}
-			rtUpload{
-				serverId: 'artifactory',
-				spec: '''{
-					 "files": [
- 					{
-     						 "pattern": ".war",
-     					 	 "target": "SpringMVCWebApp"
-    					}
-					]
-				}'''
+		stage('Artifact Deploy'){
+			steps{
+				script{
+					rtMaven.tool= 'MAVEN'
+					rtMAven.deployer releaseRepo: 'SpringMVCWebApp', snapshotRepo: 'SpringMVCWebApp', server: server
+					buildInfo= Artifactory.newBuildInfo()
+					buildInfo.env.capture= true
+				}
 			}
 		}
-	}
-}
+    	}
 }
