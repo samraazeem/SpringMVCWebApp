@@ -1,7 +1,13 @@
 def server= Artifactory.server 'artifactory'
-def rtMaven= Artifactory.newMavenBuild()
+def uploadSpec = """{
+  "files": [
+    {
+      "pattern": ".war",
+      "target": "SpringMVCWebApp"
+    }
+ ]
+}"""
 
-def buildInfo
 
 pipeline{
 	agent any
@@ -36,13 +42,8 @@ pipeline{
 		}
 		stage('Artifact Deploy'){
 			steps{
-				script{
-					rtMaven.tool= 'MAVEN'
-					rtMaven.deployer releaseRepo: 'SpringMVCWebApp', snapshotRepo: 'SpringMVCWebApp', server: server
-					rtMaven.resolver releaseRepo: 'SpringMVCWebApp', snapshotRepo: 'SpringMVCWebApp', server: server
-					buildInfo= Artifactory.newBuildInfo()
-					buildInfo.env.capture= true
-				}
+				server.upload spec: uploadSpec
+				
 			}
 		}
     	}
