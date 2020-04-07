@@ -1,4 +1,8 @@
 def server= Artifactory.server 'artifactory'
+def rtMaven= Artifactory.newMavenBuild()
+
+def buildInfo
+
 pipeline{
 	agent any
 	
@@ -34,7 +38,7 @@ pipeline{
 			steps{
 				script{
 					rtMaven.tool= 'MAVEN'
-					rtMAven.deployer releaseRepo: 'SpringMVCWebApp', snapshotRepo: 'SpringMVCWebApp', server: server
+					rtMaven.deployer releaseRepo: 'SpringMVCWebApp', snapshotRepo: 'SpringMVCWebApp', server: server
 					buildInfo= Artifactory.newBuildInfo()
 					buildInfo.env.capture= true
 				}
