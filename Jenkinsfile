@@ -33,7 +33,7 @@ pipeline{
 	stage('Artifact Deploy'){
 		steps{
 			rtServer{
-				id: 'Artifactory.artifactory',
+				serverid: 'artifactory',
 				url: 'http://localhost:8082/artifactory',
 				username: 'admin',
 				password: 'password'
