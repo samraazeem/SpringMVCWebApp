@@ -36,7 +36,7 @@ pipeline{
 		}
 		stage('Deploy to tomcat'){
 			steps{
-				bat "copy target\\SpringMVCWebApp.war \"C:\\Users\\Payal\\Software\\New folder\\apache-tomcat-8.5.53\\webapps\""
+				bat "copy target\\SpringMVCWebApp.war \"C:\Users\samraazeem\Documents\apache-tomcat-9.0.33\webapps\""
 			}
 		}
 	
