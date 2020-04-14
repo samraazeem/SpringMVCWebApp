@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>samra.azeem</groupId>
-  <artifactId>SpringWebmvcForm</artifactId>
+  <artifactId>SpringMVCWebApp</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>SpringWebmvcForm Maven Webapp</name>
+  <name>SpringWebmvcForm</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,14 +38,14 @@
   </dependencies>
 
   <distributionManagement>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>samraazeem-snapshots</name>
+    <repository>
+        <id>central</id>
+        <name>samraazeem-release</name>
         <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
-    </snapshotRepository>
+    </repository>
 </distributionManagement>
   
   <build>
-    <finalName>SpringWebmvcForm</finalName>
+    <finalName>SpringMVCWebApp</finalName>
   </build>
 </project>
