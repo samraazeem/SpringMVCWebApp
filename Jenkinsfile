@@ -1,5 +1,3 @@
-def server= Artifactory.server 'artifactory'
-
 pipeline{
 	agent any
 	
@@ -33,18 +31,14 @@ pipeline{
 		}
 		stage('Artifact Deploy'){
 			steps{
-				script{
-					def uploadSpec = """{
- 								 "files": [
-  								  {
-     									 "pattern": ".war",
-   									  "target": "SpringMVCWebApp"
-  								  }
-							 ]
-					}"""
-					server.upload spec: uploadSpec
-				}
+				bat 'mvn deploy'
 			}
 		}
+		stage('Deploy to tomcat'){
+			steps{
+				bat "copy target\\SpringMVCWebApp.war \"C:\\Users\\Payal\\Software\\New folder\\apache-tomcat-8.5.53\\webapps\""
+			}
+		}
+	
     	}
 }
