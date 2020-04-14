@@ -38,34 +38,12 @@
   </dependencies>
 
   <distributionManagement>
-    <repository>
-        <id>central</id>
-        <name>samraazeem-releases</name>
-        <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
-    </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>samraazeem-snapshots</name>
         <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
     </snapshotRepository>
 </distributionManagement>
-  
-<repositories>
-  <repository>
-    <snapshots>
-    <enabled>false</enabled>
-    </snapshots>
-    <id>central</id>
-    <name>libs-release</name>
-    <url>http://localhost:8081/artifactory/libs-release</url>
-  </repository>
-  <repository>
-    <snapshots />
-    <id>snapshots</id>
-    <name>libs-snapshot</name>
-    <url>http://localhost:8081/artifactory/libs-snapshot</url>
-  </repository>
-</repositories>
   
   <build>
     <finalName>SpringWebmvcForm</finalName>
