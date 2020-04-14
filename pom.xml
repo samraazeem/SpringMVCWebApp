@@ -49,7 +49,7 @@
         <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
     </snapshotRepository>
 </distributionManagement>
-
+  
   <build>
     <finalName>SpringWebmvcForm</finalName>
   </build>
