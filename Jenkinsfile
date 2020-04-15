@@ -30,14 +30,15 @@ pipeline{
 			}
 		}
 
-		stage('Deploy to tomcat'){
-			steps{
-				bat "copy target\\SpringMVCWebApp.war \"C:\\Users\\samraazeem\\Documents\\apache-tomcat-9.0.33\\webapps\""
-			}
-		}
+		
 		stage('Artifact Deploy'){
 			steps{
 				bat 'mvn deploy'
+			}
+		}
+		stage('Deploy to tomcat'){
+			steps{
+				bat "copy target\\SpringMVCWebApp.war \"C:\\Users\\samraazeem\\Documents\\apache-tomcat-9.0.33\\webapps"
 			}
 		}
 	}
