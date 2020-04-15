@@ -46,9 +46,14 @@
   <distributionManagement>
     <repository>
         <id>central</id>
-        <name>samraazeem-release</name>
+        <name>samraazeem-releases</name>
         <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
     </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>samraazeem-snapshots</name>
+        <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
+    </snapshotRepository>
 </distributionManagement>
   
   <build>

@@ -29,12 +29,16 @@ pipeline{
 				}
 			}
 		}
-
+		stage('Deploy ARtifacts'){
+			steps{
+				bat 'mvn deploy'
+			}
+		}
 		
 		
 		stage('Deploy to tomcat'){
 			steps{
-				bat "copy target\\SpringMVCWebApp.war \"C:\\Users\\samraazeem\\Documents\\apache-tomcat-9.0.33\\webapps"
+				bat "copy C:\\Users\\samraazeem\\Documents\\GitHub\\SpringMVCWebApp\\target\\SpringMVCWebApp.war \"C:\\Users\\samraazeem\\Documents\\apache-tomcat-9.0.33\\webapps"
 			}
 		}
 	}
