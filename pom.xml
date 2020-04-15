@@ -47,12 +47,12 @@
     <repository>
         <id>central</id>
         <name>samraazeem-releases</name>
-        <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
+        <url>http://localhost:8081/artifactory/Maven_Samra</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>samraazeem-snapshots</name>
-        <url>http://localhost:8082/artifactory/SpringMVCWebApp</url>
+        <url>http://localhost:8081/artifactory/Maven_Samra</url>
     </snapshotRepository>
 </distributionManagement>
   
