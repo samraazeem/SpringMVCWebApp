@@ -8,7 +8,7 @@ pipeline{
 	stages {
 		stage('Code Checkout'){
 			steps{
-				git url: 'https://github.com/samraazeem/Training.git'
+				git url: 'https://github.com/samraazeem/SpringMVCWebApp.git'
 			}
 		}
 		stage('Build Stage'){
@@ -29,7 +29,7 @@ pipeline{
 				}
 			}
 		}
-		stage('Deploy ARtifacts'){
+		stage('Deploy Artifacts'){
 			steps{
 				bat 'mvn deploy'
 			}
