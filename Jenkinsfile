@@ -25,7 +25,7 @@ pipeline{
 		stage('SonarQube Analysis'){
 			steps{
 				withSonarQubeEnv('Sonar_Qube'){
-					bat 'mvn sonar:sonar -Dsonar.projectKey=Scripted_Pipeline -Dsonar.host.url=http://localhost:9000 -Dsonar.login=710badee0efb15737fe37113a5eafc3e4d2dce71'
+					bat 'mvn sonar:sonar -Dsonar.projectKey=SpringMVCWebForm -Dsonar.host.url=http://localhost:9000 -Dsonar.login=3311441b9ccb1ee8b2a17945ac36320feca30de1'
 				}
 			}
 		}
