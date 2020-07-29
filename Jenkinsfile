@@ -36,10 +36,10 @@ pipeline{
 		}
 		
 		
-		stage('Deploy to tomcat'){
+		/***stage('Deploy to tomcat'){
 			steps{
 				bat "copy C:\\Users\\samraazeem\\Documents\\GitHub\\SpringMVCWebApp\\target\\SpringMVCWebApp.war \"C:\\Users\\samraazeem\\Documents\\apache-tomcat-9.0.33\\webapps"
 			}
-		}
+		}***/
 	}
 }
