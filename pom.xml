@@ -3,7 +3,7 @@
   <groupId>samra.azeem</groupId>
   <artifactId>SpringMVCWebApp2</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <name>SpringWebmvcForm</name>
   <url>http://maven.apache.org</url>
   <properties>
